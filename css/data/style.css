@@ -1,0 +1,215 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* font */
+@font-face {
+	font-family: 'OpenSans-Regular';
+	src: url(./font/OpenSans-Regular-webfont.woff) format(woff);
+}
+/* style */
+body{
+	background-color: #eaeaea;
+	color: #333;
+	font: 18px/36px 'OpenSans-Regular', 'Arial Narrow', arial, sans-serif;
+}
+h1{
+	font-weight: bold;
+	font-size: 50px;
+	margin: 50px 0;
+	text-align: center;
+	text-shadow: 1px 2px 2px white;
+}
+.container{
+	width: 600px;
+	background-color: white;
+	margin: auto;
+	padding: 20px;
+	box-shadow: 0 0 3px 3px rgba(0, 0, 0, .3);
+	border-radius: 5px;
+}
+.gallery li{
+	width: 120px;
+	height: 120px;
+	border-radius:50%;
+	border: 3px solid #333;
+	float: left;
+	/* overflow: hidden; */
+	margin-right: 23px;
+	position: relative;
+	
+}
+.gallery li,
+.gallery li img,
+.gallery li span{
+	border-radius: 1px;
+}
+.gallery li span{
+		display: block;
+		width: 120px;
+		height: 120px;
+		background-color: rgba(200, 200, 200, .5);
+		position: absolute;
+		top: 0;
+		text-align: center;
+		line-height: 120px;
+		color: #333;
+		text-decoration: none;
+		text-shadow: 1px 2px 2px white;
+		opacity: 0;
+		transition: 0.3s;
+		transform: scale(0) rotate(0);
+}
+.gallery li a:hover span{
+	opacity: 1;
+	transform: scale(1) rotate(360deg);
+
+
+}
+
+
+
+/* clearfix */
+.clearfix{
+	clear: both;
+}
+
+/* overlay */
+.overlay{
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, .8);
+	z-index: 9999;
+	transition: .8s;
+	text-align: center;
+	padding: 100px 0;
+}
+.overlay:target{
+	width: auto;
+	height: auto;
+	bottom: 0;
+	right: 0;
+	background:rgba(0, 0, 0, .8);
+}
+.overlay img{
+	max-height: 100%;
+	box-shadow: 2px 2px 7px rgba(0, 0, 0, .7);
+
+}
+.overlay:target img{
+	animation: fadeAja 1s;
+}
+.overlay .close{
+	position: absolute;
+	top: 50px;
+	left: 50%;
+	margin-left: -20px;
+	color: white;
+	text-decoration: none;
+	background-color: black;
+	border: 1px solid white;
+	line-height: 15px;
+	padding: 5px;
+	opacity: 0;
+}
+.overlay:target .close{
+	animation: SlideDwonFade .5s .5s forwards;
+}
+.overlay:target .next,
+.overlay:target .prev{
+	animation: fadeAja .5s .5s forwards;
+}
+/* navigasi */
+.next, .prev{
+	width: 72px;
+	height: 72px;
+	background-image: url(./img/Random/next.png);
+	position: absolute;
+	text-indent: -9999;
+	top: 45%;
+	margin-left: 20px;
+	opacity: 0;
+}
+.prev{
+	background-image: url(./img/Random/prev.png);
+	margin-left: -90px;
+}
+
+/* animation */
+@keyframes fadeAja{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+@keyframes ZoomDanFade {
+	0%{
+		transform: scale(0);
+		opacity: 0;
+	}
+	100%{
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+@keyframes SlideDwonFade{
+	0%{
+		opacity: 0;
+		margin-top: -20px;
+	}
+	100%{
+		opacity: 1;
+		margin-top: 0;
+	}
+}
