@@ -1,0 +1,41 @@
+/* Untuk Tablet */
+@media all and (max-width: 1000px) {
+    .service {
+      width: 50%;
+      margin-bottom: 50px;
+    }
+
+    .strategy {
+        width: 50%;
+        margin-bottom: 50px;
+    }
+    
+    .heading h2 {
+      font-size: 28px;
+    }
+
+  }
+  
+  /* Untuk Smartphone */
+  @media all and (max-width: 670px) {
+    .service {
+      width: 100%;
+    }
+
+    .strategy {
+        width: 100%;
+      }
+    
+    .btn {
+      width: 100%;
+    }
+
+    .contact-form input {
+        width: 100%;
+    }
+
+    .contact-form textarea {
+        width: 100%;
+    }
+    
+  }
