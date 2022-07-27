@@ -1,3 +1,3 @@
 ```python
-Pendaftaran berbasis web php murni
+Pendaftaran berbasis web dengan bahasa Java Script dan Php
 ```
